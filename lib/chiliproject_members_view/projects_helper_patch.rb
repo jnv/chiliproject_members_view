@@ -1,4 +1,6 @@
 # -*- encoding : utf-8 -*-
+require_dependency 'projects_helper'
+
 module ChiliprojectMembersView
   module ProjectsHelperPatch
 

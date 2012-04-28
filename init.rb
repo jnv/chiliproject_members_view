@@ -4,7 +4,6 @@ require 'dispatcher'
 #require File.expand_path('../chiliproject_members_view.gemspec', __FILE__)
 
 Dispatcher.to_prepare :chiliproject_members_view do
-  require_dependency 'projects_helper'
   ProjectsHelper.send(:include, ChiliprojectMembersView::ProjectsHelperPatch) unless ProjectsHelper.included_modules.include? ChiliprojectMembersView::ProjectsHelperPatch
 end
 
