@@ -4,8 +4,17 @@ require 'dispatcher'
 #require File.expand_path('../chiliproject_members_view.gemspec', __FILE__)
 
 Dispatcher.to_prepare :chiliproject_members_view do
-  ProjectsHelper.send(:include, ChiliprojectMembersView::ProjectsHelperPatch) unless ProjectsHelper.included_modules.include? ChiliprojectMembersView::ProjectsHelperPatch
+  #unless ProjectsHelper.included_modules.include? ChiliprojectMembersView::ProjectsHelperPatch
+  #  ProjectsHelper.send(:include, ChiliprojectMembersView::ProjectsHelperPatch) 
+  #end
+  unless ProjectsController.included_modules.include? ChiliprojectMembersView::ProjectsControllerPatch
+    ProjectsController.send(:include, ChiliprojectMembersView::ProjectsControllerPatch) 
+  end
+  unless MembersController.included_modules.include? ChiliprojectMembersView::MembersControllerPatch
+    MembersController.send(:include, ChiliprojectMembersView::MembersControllerPatch) 
+  end
 end
+
 
 Redmine::Plugin.register :chiliproject_members_view do
   spec = Gem.loaded_specs['chiliproject_members_view']
