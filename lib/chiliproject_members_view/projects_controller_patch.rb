@@ -5,10 +5,10 @@ module ChiliprojectMembersView
   module ProjectsControllerPatch
 
     def self.included(base)
-      base.send(:include, ChiliprojectMembersViewHelper)
+      base.send(:include, MembersViewHelper)
       base.class_eval do
         unloadable
-        helper ChiliprojectMembersViewHelper
+        helper MembersViewHelper
       end
     end
   end

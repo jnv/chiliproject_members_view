@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 require_dependency 'projects_helper'
 
-module ChiliprojectMembersViewHelper
+module MembersViewHelper
   def load_roles(project)
     Role.find_all_givable
   end
