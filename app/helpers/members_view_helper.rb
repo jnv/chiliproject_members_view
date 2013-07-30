@@ -7,7 +7,7 @@ module MembersViewHelper
   end
 
   def load_members(project)
-    project.member_principals.find(:all, :include => [:roles, :principal]).sort
+    project.member_principals.find(:all, :include => [:roles, :principal]) #.sort
   end
 
   def load_principals(project)
